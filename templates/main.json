@@ -1,0 +1,58 @@
+{
+    "rules": {
+        "name": "default",
+        "children": [
+            "#include:static.json",
+            "#include:dynamic.json",
+            "#include:Enable_HTTP2.json"
+        ],
+        "behaviors": [
+            {
+                "name": "origin",
+                "options": {
+                    "hostname": "${env.originHostname}",
+                    "ports": "",
+                    "originType": "CUSTOMER",
+                    "forwardHostHeader": "REQUEST_HOST_HEADER",
+                    "cacheKeyHostname": "REQUEST_HOST_HEADER",
+                    "compress": true,
+                    "enableTrueClientIp": true,
+                    "trueClientIpHeader": "True-Client-IP",
+                    "trueClientIpClientSetting": false,
+                    "originCertificate": "",
+                    "verificationMode": "CUSTOM",
+                    "httpPort": 80,
+                    "httpsPort": 443,
+                    "originSni": true,
+                    "customValidCnValues": [
+                        "{{Origin Hostname}}",
+                        "{{Forward Host Header}}"
+                    ],
+                    "originCertsToHonor": "STANDARD_CERTIFICATE_AUTHORITIES",
+                    "standardCertificateAuthorities": [
+                        "akamai-permissive"
+                    ]
+                }
+            },
+            {
+                "name": "cpCode",
+                "options": {
+                    "value": {
+                        "id": "${env.cpCode}"
+                    }
+                }
+            },
+            {
+                "name": "caching",
+                "options": {
+                    "behavior": "NO_STORE"
+                }
+            }
+        ],
+        "options": {
+            "is_secure": false
+        },
+        "variables": [],
+        "comments": ""
+    }
+}

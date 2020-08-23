@@ -1,0 +1,18 @@
+{
+    "productId": "prd_Site_Accel",
+    "contractId": "ctr_3-NJPSW",
+    "groupIds": [
+        23213
+    ],
+    "environments": [
+        "qa",
+        "prod",
+        "stage"
+    ],
+    "version": "0.7.2-RELEASE",
+    "isSecure": false,
+    "edgeGridConfig": {
+        "section": "papi"
+    },
+    "name": "test.kartik"
+}

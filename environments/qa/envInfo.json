@@ -1,0 +1,73 @@
+{
+    "name": "qa",
+    "propertyName": "qa.test.kartik",
+    "groupId": 23213,
+    "isSecure": false,
+    "propertyId": 643293,
+    "latestVersionInfo": {
+        "propertyVersion": 1,
+        "updatedByUser": "mllsv545sdptzavr",
+        "updatedDate": "2020-08-23T03:50:51Z",
+        "productionStatus": "INACTIVE",
+        "stagingStatus": "ACTIVE",
+        "productId": "prd_Site_Accel",
+        "ruleFormat": "v2020-03-04"
+    },
+    "suggestedRuleFormat": "v2020-03-04",
+    "environmentHash": "8f502e3ecc2028f120d3028338852d343ee77646fa464bab39942c3d03ca5373",
+    "ruleTreeHash": "9439a99d54c3786a14e1131d9f96b967daac65c9bb33014758bdd6b7f6794823",
+    "lastValidatedHash": "8f502e3ecc2028f120d3028338852d343ee77646fa464bab39942c3d03ca5373",
+    "lastSaveWarnings": [
+        {
+            "type": "https://problems.luna.akamaiapis.net/papi/v0/validation/validation_message.ssl_custom_warning_test_staging",
+            "errorLocation": {
+                "template": "templates/main.json",
+                "variables": [],
+                "location": "rules/behaviors/0",
+                "value": {
+                    "name": "origin",
+                    "options": {
+                        "hostname": "origin-qa.test.kartik",
+                        "ports": "",
+                        "originType": "CUSTOMER",
+                        "forwardHostHeader": "REQUEST_HOST_HEADER",
+                        "cacheKeyHostname": "REQUEST_HOST_HEADER",
+                        "compress": true,
+                        "enableTrueClientIp": true,
+                        "trueClientIpHeader": "True-Client-IP",
+                        "trueClientIpClientSetting": false,
+                        "originCertificate": "",
+                        "verificationMode": "CUSTOM",
+                        "httpPort": 80,
+                        "httpsPort": 443,
+                        "originSni": true,
+                        "customValidCnValues": [
+                            "{{Origin Hostname}}",
+                            "{{Forward Host Header}}"
+                        ],
+                        "originCertsToHonor": "STANDARD_CERTIFICATE_AUTHORITIES",
+                        "standardCertificateAuthorities": [
+                            "akamai-permissive"
+                        ]
+                    }
+                }
+            },
+            "detail": "If you are changing your `Origin Server` SSL Certificate Verification settings it is strongly recommended that you test on Staging before activating on Production. Failure to test on Staging may result in a service outage."
+        }
+    ],
+    "lastSaveErrors": [],
+    "lastSavedHash": "8f502e3ecc2028f120d3028338852d343ee77646fa464bab39942c3d03ca5373",
+    "lastSaveHostnameErrors": [],
+    "lastSaveHostnameWarnings": [],
+    "lastSavedHostnamesHash": "14b6cf1f0f11bf87750e65a5343e933f3686c9998e04388967e0876a957c7219",
+    "activeIn_STAGING_Info": {
+        "propertyVersion": 1,
+        "updatedByUser": "mllsv545sdptzavr",
+        "updatedDate": "2020-08-23T03:50:51Z",
+        "productionStatus": "INACTIVE",
+        "stagingStatus": "ACTIVE",
+        "etag": "d89e694750731db41c8ad47070612e299db6b8f3",
+        "productId": "prd_Site_Accel",
+        "ruleFormat": "v2020-03-04"
+    }
+}

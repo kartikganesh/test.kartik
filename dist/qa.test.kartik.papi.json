@@ -1,0 +1,192 @@
+{
+    "rules": {
+        "name": "default",
+        "children": [
+            {
+                "name": "Static Content",
+                "children": [],
+                "behaviors": [
+                    {
+                        "name": "caching",
+                        "options": {
+                            "behavior": "MAX_AGE",
+                            "ttl": "100d",
+                            "mustRevalidate": false
+                        }
+                    }
+                ],
+                "criteria": [
+                    {
+                        "name": "fileExtension",
+                        "options": {
+                            "matchOperator": "IS_ONE_OF",
+                            "values": [
+                                "aif",
+                                "aiff",
+                                "au",
+                                "avi",
+                                "bin",
+                                "bmp",
+                                "cab",
+                                "carb",
+                                "cct",
+                                "cdf",
+                                "class",
+                                "css",
+                                "doc",
+                                "dcr",
+                                "dtd",
+                                "exe",
+                                "flv",
+                                "gcf",
+                                "gff",
+                                "gif",
+                                "grv",
+                                "hdml",
+                                "hqx",
+                                "ico",
+                                "ini",
+                                "jpeg",
+                                "jpg",
+                                "js",
+                                "mov",
+                                "mp3",
+                                "nc",
+                                "pct",
+                                "pdf",
+                                "png",
+                                "ppc",
+                                "pws",
+                                "swa",
+                                "swf",
+                                "txt",
+                                "vbs",
+                                "w32",
+                                "wav",
+                                "wbmp",
+                                "wml",
+                                "wmlc",
+                                "wmls",
+                                "wmlsc",
+                                "xsd",
+                                "zip",
+                                "pict",
+                                "tif",
+                                "tiff",
+                                "mid",
+                                "midi",
+                                "ttf",
+                                "eot",
+                                "woff",
+                                "woff2",
+                                "otf",
+                                "svg",
+                                "svgz",
+                                "webp",
+                                "jxr",
+                                "jar",
+                                "jp2",
+                                "bz2",
+                                "tgz",
+                                "tar",
+                                "pkg",
+                                "gz",
+                                "dmg",
+                                "iso"
+                            ],
+                            "matchCaseSensitive": false
+                        }
+                    }
+                ],
+                "criteriaMustSatisfy": "all",
+                "comments": ""
+            },
+            {
+                "name": "Dynamic Content",
+                "children": [],
+                "behaviors": [
+                    {
+                        "name": "downstreamCache",
+                        "options": {
+                            "behavior": "TUNNEL_ORIGIN"
+                        }
+                    }
+                ],
+                "criteria": [
+                    {
+                        "name": "cacheability",
+                        "options": {
+                            "value": "CACHEABLE",
+                            "matchOperator": "IS_NOT"
+                        }
+                    }
+                ],
+                "criteriaMustSatisfy": "all",
+                "comments": ""
+            },
+            {
+                "name": "Enable HTTP2",
+                "children": [],
+                "behaviors": [
+                    {
+                        "name": "http2",
+                        "options": {
+                            "enabled": ""
+                        }
+                    }
+                ],
+                "criteria": [],
+                "criteriaMustSatisfy": "all",
+                "comments": ""
+            }
+        ],
+        "behaviors": [
+            {
+                "name": "origin",
+                "options": {
+                    "hostname": "origin-qa.test.kartik",
+                    "ports": "",
+                    "originType": "CUSTOMER",
+                    "forwardHostHeader": "REQUEST_HOST_HEADER",
+                    "cacheKeyHostname": "REQUEST_HOST_HEADER",
+                    "compress": true,
+                    "enableTrueClientIp": true,
+                    "trueClientIpHeader": "True-Client-IP",
+                    "trueClientIpClientSetting": false,
+                    "originCertificate": "",
+                    "verificationMode": "CUSTOM",
+                    "httpPort": 80,
+                    "httpsPort": 443,
+                    "originSni": true,
+                    "customValidCnValues": [
+                        "{{Origin Hostname}}",
+                        "{{Forward Host Header}}"
+                    ],
+                    "originCertsToHonor": "STANDARD_CERTIFICATE_AUTHORITIES",
+                    "standardCertificateAuthorities": [
+                        "akamai-permissive"
+                    ]
+                }
+            },
+            {
+                "name": "cpCode",
+                "options": {
+                    "value": {
+                        "id": 1080780
+                    }
+                }
+            },
+            {
+                "name": "caching",
+                "options": {
+                    "behavior": "NO_STORE"
+                }
+            }
+        ],
+        "options": {
+            "is_secure": false
+        },
+        "variables": [],
+        "comments": ""
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "name": "Dynamic Content",
+    "children": [],
+    "behaviors": [
+        {
+            "name": "downstreamCache",
+            "options": {
+                "behavior": "TUNNEL_ORIGIN"
+            }
+        }
+    ],
+    "criteria": [
+        {
+            "name": "cacheability",
+            "options": {
+                "value": "CACHEABLE",
+                "matchOperator": "IS_NOT"
+            }
+        }
+    ],
+    "criteriaMustSatisfy": "all",
+    "comments": ""
+}

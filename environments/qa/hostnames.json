@@ -1,0 +1,8 @@
+[
+    {
+        "cnameFrom": "qa.test.kartik",
+        "cnameTo": "qa.test.kartik.edgesuite.net",
+        "cnameType": "EDGE_HOSTNAME",
+        "edgeHostnameId": 4633972
+    }
+]

@@ -1,0 +1,17 @@
+{
+    "name": "prod",
+    "propertyName": "prod.test.kartik",
+    "groupId": 23213,
+    "isSecure": false,
+    "propertyId": 643294,
+    "latestVersionInfo": {
+        "propertyVersion": 1,
+        "updatedByUser": "mllsv545sdptzavr",
+        "updatedDate": "2020-08-23T03:41:37Z",
+        "productionStatus": "INACTIVE",
+        "stagingStatus": "INACTIVE",
+        "productId": "prd_Site_Accel",
+        "ruleFormat": "v2020-03-04"
+    },
+    "suggestedRuleFormat": "v2020-03-04"
+}
